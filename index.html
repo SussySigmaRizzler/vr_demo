@@ -28,8 +28,8 @@ AFRAME.registerComponent('ballgen', {
             var posY = Math.random() * 5;
             var posZ = Math.random() * -5;
 
-            newSphere.setAttribute('src', 'bowling_ball/scene.gltf')
-            newSphere.setAttribute('scale', '0.25 0.25 0.25');
+            newSphere.setAttribute('src', 'ball.gltf');
+            newSphere.setAttribute('scale', '1 1 1');
             newSphere.setAttribute('dynamic-body', 'shape: sphere');
             newSphere.setAttribute('class', 'interact');
             newSphere.setAttribute('grabbable', '');
