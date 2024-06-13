@@ -22,15 +22,15 @@ AFRAME.registerComponent('ballgen', {
         let button = this.el;
         button.addEventListener('click', function(){
             let scene = document.querySelector('#scene');
-            let newSphere = document.createElement('a-sphere');
+            let newSphere = document.createElement('a-gltf-model');
             let piece = document.querySelector('#p');
             var posX = Math.random() * 5;
             var posY = Math.random() * 5;
             var posZ = Math.random() * -5;
 
-            newSphere.setAttribute('radius', '0.25');
+            newSphere.setAttribute('src', 'bowling_ball/scene.gltf')
+            newSphere.setAttribute('scale', '0.25 0.25 0.25');
             newSphere.setAttribute('dynamic-body', 'shape: sphere');
-            newSphere.setAttribute('color', 'blue');
             newSphere.setAttribute('class', 'interact');
             newSphere.setAttribute('grabbable', '');
             newSphere.setAttribute('position', "-0.75 2 0");
@@ -65,12 +65,12 @@ AFRAME.registerComponent('gamereset', {
             for (var i = 0; i < 3; i++){
                 for (var j = 0; j < 3; j++){
                     let elem = document.createElement('a-gltf-model');
-                    elem.setAttribute('src', 'bowling_pin/scene.gltf');
+                    elem.setAttribute('src', 'bowling_pin/Pinscene.gltf');
                     elem.setAttribute('class', 'pin')
                     elem.setAttribute('id', 'p' + pinNum++);
                     elem.setAttribute('aabb-collider', 'objects: .coll');
                     elem.setAttribute('dynamic-body', '');
-                    elem.setAttribute('scale', '1 1 1');
+                    elem.setAttribute('scale', '0.2 0.17 0.2');
                     elem.setAttribute('position', `${x} ${y} ${z}`);
 
                     pins.push(elem);
